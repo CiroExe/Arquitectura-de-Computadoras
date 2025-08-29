@@ -15,16 +15,18 @@ jz fin
 
 mov efx, ebx
 mov ecx, efx
-mov eax, 0
+mov eax, 1
 
 loop:
 sub efx, 1
+mov ecx, efx
+xor ac, ac
 otro:
-add eax, ebx
+add ac, eax
 sub ecx, 1
 cmp ecx, 0
 jnz otro
-mov ecx, efx
+mov eax, ac
 cmp efx, 0
 jnz loop:
 
@@ -37,4 +39,5 @@ ldh ecx, 0x04
 ldl ecx, 0x01
 sys 2
 stop
+
 
