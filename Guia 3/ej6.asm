@@ -24,7 +24,7 @@ cmp ebx, ac
 jnn fin
 add eax, 1
 jmp sigue
-
+fin:
 mov edx, ds
 add edx, 4
 mov [4], eax
@@ -32,4 +32,5 @@ mov eax, 0x01
 ldh ecx, 0x04
 sys 2
 stop
+
 
