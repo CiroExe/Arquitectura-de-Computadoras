@@ -11,12 +11,12 @@ ldh ecx, 0x04
 ldl ecx 0x01
 sys 1
 cmp [edx], 0
-jn fin
+jn stop
 xor ac, ac
 mov eax, [edx]
 loop:
 cmp eax, 0
-jz otro
+jz fin; muestra resultado
 jnn sigue
 add ac, 1
 sigue:
@@ -29,6 +29,8 @@ mov eax, 0x01
 ldh ecx, 0x04
 ldl ecx, 0x01
 sys 2
+jmp otro
 stop
+
 
 
